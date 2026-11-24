@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.DS_Store
+# run outputs
+output_BNN/
+validation/results/
+*.pt
+*.log
+examples/data/
+examples/*.png

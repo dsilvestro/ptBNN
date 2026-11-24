@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ptbnn"
+version = "0.1.0"
+description = "Bayesian neural networks in PyTorch, sampled with Hamiltonian Monte Carlo"
+readme = "README.md"
+license = "LGPL-2.1-only"
+license-files = ["LICENSE"]
+authors = [{ name = "Daniele Silvestro" }]
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.2",
+    "numpy>=1.22",
+    "scipy>=1.8",
+    "pandas>=1.5",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering",
+]
+
+[project.optional-dependencies]
+plot = ["matplotlib"]
+examples = ["matplotlib"]
+validation = ["jax", "numpyro", "arviz>=1.0", "matplotlib"]
+dev = ["pytest"]
+
+[project.urls]
+Homepage = "https://github.com/dsilvestro/ptBNN"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
