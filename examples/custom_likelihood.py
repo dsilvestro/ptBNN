@@ -4,7 +4,6 @@ The data have a few gross outliers. A Gaussian likelihood is pulled towards
 them; a Student-t likelihood treats them as heavy-tail draws. StudentT below is
 all it takes to add a likelihood that ptBNN does not have.
 """
-import matplotlib.pyplot as plt
 import numpy as np
 import torch
 
@@ -50,6 +49,8 @@ class StudentT(Likelihood):
 
 
 if __name__ == "__main__":
+    import matplotlib.pyplot as plt  # only needed for the figure
+
     rng = np.random.default_rng(2)
     x = np.sort(rng.uniform(-3, 3, 120))
     y = np.sin(x) + rng.normal(0, 0.1, x.size)
